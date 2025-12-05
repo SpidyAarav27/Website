@@ -1,62 +1,58 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --bg: #0d0d0d;
+    --text: #f1f1f1;
+    --subtle: #888;
 }
 
-html, body {
-  height: 100%;
-  background-color: #111;
-  color: #fff;
-  font-family: 'Helvetica Neue', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+body {
+    margin: 0;
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Quote Container */
-.quote-container {
-  text-align: center;
-  max-width: 80%;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 2s forwards;
+.wrap {
+    text-align: center;
+    padding: 0 20px;
 }
 
-.quote-container h1 {
-  font-size: 2.5rem;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  animation: textSlide 3s infinite alternate;
+h1 {
+    font-size: 3.2rem;
+    margin-bottom: 5px;
+    font-weight: 600;
 }
 
-/* Subtle Background Animation */
-body::before {
-  content: '';
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 70%);
-  animation: rotate 60s linear infinite;
-  z-index: 0;
+.nickname {
+    color: var(--subtle);
+    font-size: 1rem;
+    margin-bottom: 20px;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.tagline {
+    color: var(--subtle);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
 }
 
-@keyframes textSlide {
-  0% { transform: translateX(-8px); }
-  100% { transform: translateX(8px); }
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
 }
 
-@keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.5;
 }
