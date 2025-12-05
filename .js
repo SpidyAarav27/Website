@@ -1,6 +1,13 @@
-// Optional: subtle fade-in after page load
-window.addEventListener('load', () => {
-  const quote = document.querySelector('.quote-container');
-  quote.style.opacity = '1';
-  quote.style.transform = 'translateY(0)';
+// Select the main container
+const wrap = document.querySelector('.wrap');
+
+// Hide initially
+wrap.style.opacity = 0;
+wrap.style.transform = 'translateY(20px)';
+
+// Animate on page load
+window.addEventListener('DOMContentLoaded', () => {
+    wrap.style.transition = 'opacity 1s ease, transform 1s ease';
+    wrap.style.opacity = 1;
+    wrap.style.transform = 'translateY(0)';
 });
