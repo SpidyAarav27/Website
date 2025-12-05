@@ -1,4 +1,4 @@
-document.getElementById("loadBtn").addEventListener("click", () => {
-  const output = document.getElementById("output");
-  output.textContent = "Content loaded. Nothing fancy, just works.";
+document.getElementById("toggleContact").addEventListener("click", () => {
+  const box = document.getElementById("contactBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
 });
