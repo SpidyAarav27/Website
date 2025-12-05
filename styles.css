@@ -1,115 +1,62 @@
-body {
+/* General Reset */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: #f7f7f7;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-  background: #222;
+html, body {
+  height: 100%;
+  background-color: #111;
   color: #fff;
-  text-align: center;
-  padding: 3rem 1.5rem;
-}
-
-.tagline {
-  margin: 0.5rem 0 1rem;
-}
-
-nav {
+  font-family: 'Helvetica Neue', sans-serif;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+  align-items: center;
+  overflow: hidden;
 }
 
-nav a {
-  color: #ccc;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.3rem 0.6rem;
-  transition: 0.2s;
-}
-
-nav a:hover {
-  color: #fff;
-}
-
-main {
-  max-width: 1000px;
-  margin: 2.5rem auto;
-  padding: 0 1rem;
-}
-
-section {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-h2 {
-  margin-top: 0;
-  border-left: 6px solid #444;
-  padding-left: 0.7rem;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.project {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.project:last-child {
-  border-bottom: none;
-}
-
-.exp {
-  margin-bottom: 1.5rem;
-}
-
-.exp .years {
-  color: #555;
-  font-size: 0.9rem;
-  margin: 0.2rem 0 0.5rem;
-}
-
-button {
-  padding: 0.7rem 1rem;
-  border: none;
-  background: #222;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #000;
-}
-
-#contactBox {
-  display: none;
-  background: #eee;
-  padding: 1rem;
-  margin-top: 1rem;
-  border-radius: 6px;
-}
-
-footer {
+/* Quote Container */
+.quote-container {
   text-align: center;
-  padding: 2rem;
-  background: #222;
-  color: #ccc;
-  margin-top: 3rem;
+  max-width: 80%;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 2s forwards;
 }
 
+.quote-container h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  animation: textSlide 3s infinite alternate;
+}
+
+/* Subtle Background Animation */
+body::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 70%);
+  animation: rotate 60s linear infinite;
+  z-index: 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textSlide {
+  0% { transform: translateX(-8px); }
+  100% { transform: translateX(8px); }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
